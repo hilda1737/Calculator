@@ -20,7 +20,30 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        validate()
         castview()
+
+    }
+
+
+
+    fun validate(){
+        tilNum1.error=null
+        tilNum22.error=null
+        var error=false
+        var num1 = etNum1.text.toString()
+        if (num1.isBlank()){
+            tilNum22.error="Number is required"
+            error=true
+        }
+        var num2 = etNum2.text.toString()
+        if (num2.isBlank()){
+            tilNum22.error="Second number is required"
+            error=true
+        }
+        if (!error){
+
+        }
     }
 
     fun castview() {
@@ -58,24 +81,6 @@ class MainActivity : AppCompatActivity() {
             divide(number1, number2)
         }
 
-        fun validate(){
-            tilNum1.error=null
-            tilNum22.error=null
-            var error=false
-            var num1 = etNum1.text.toString()
-            if (num1.isBlank()){
-                tilNum22.error="Number is required"
-                error=true
-            }
-            var num2 = etNum2.text.toString()
-            if (num2.isBlank()){
-                tilNum22.error="Second number is required"
-                error=true
-            }
-            if (!error){
-
-            }
-        }
 
     }
 
